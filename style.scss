@@ -11,6 +11,7 @@ $Dark_grayish_blue: hsl(228, 12%, 48%);
 }
 body {
   background-color: $Cream;
+  font-size: 14px;
 }
 .card {
   width: 600px;
@@ -20,9 +21,10 @@ body {
   border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  &_left {
-    background-image: url(images/image-product-desktop.jpg);
-    background-size: cover;
+  //   &_left,
+  .big-perfume {
+    // background-image: url(images/image-product-desktop.jpg);
+    // background-size: cover;
     border-radius: 15px 0 0 15px;
   }
   &_right {
@@ -33,17 +35,20 @@ body {
     h2 {
       font-family: Montserrat;
       font-weight: 500;
-      font-size: 12px;
+      font-size: 1rem;
       text-transform: uppercase;
       color: $Dark_grayish_blue;
+      letter-spacing: 0.5rem;
     }
-    h1 {
-      font: 32px Fraunces;
+    h1,
+    h3 {
+      font: 2rem Fraunces;
       font-weight: 700;
       color: $Very_dark_blue;
     }
-    p {
-      font: 14px Montserrat;
+    p,
+    del {
+      font: 1rem Montserrat;
       font-weight: 500;
       color: $Dark_grayish_blue;
       line-height: 23px;
@@ -52,13 +57,13 @@ body {
       display: flex;
       flex-direction: row;
       align-items: center;
-      h1 {
+      h3 {
         color: $Dark_cyan;
         margin-right: 19px;
       }
-      p {
-        text-decoration: line-through;
-      }
+      //   p {
+      //     text-decoration: line-through;
+      //   }
     }
     button {
       width: 236px;
@@ -68,7 +73,7 @@ body {
       border-radius: 10px;
       color: white;
       align-items: center;
-      font: 14px Montserrat;
+      font: 1rem Montserrat;
       font-weight: 700;
       img {
         position: relative;
@@ -82,9 +87,24 @@ body {
     }
   }
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 @media (min-width: 376px) {
   button {
     box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  }
+  .small-perfume {
+    display: none;
+    border-radius: 15px 15px 0 0;
   }
 }
 @media (max-width: 375px) {
@@ -96,6 +116,13 @@ body {
     margin: 20px auto;
     &_left {
       border-radius: 15px 15px 0 0;
+
+      .big-perfume {
+        display: none;
+      }
+      .small-perfume {
+        border-radius: 15px 15px 0 0;
+      }
     }
     &_right {
       padding: 25px;
